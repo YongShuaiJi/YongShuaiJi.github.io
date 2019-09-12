@@ -185,20 +185,32 @@
 
 <!-- Google Analytics -->
 {% if site.ga_track_id %}
+<!--<script>-->
+<!--    // dynamic User by Hux-->
+<!--    var _gaId = '{{ site.ga_track_id }}';-->
+<!--    var _gaDomain = '{{ site.ga_domain }}';-->
+
+<!--    // Originial-->
+<!--    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+<!--    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+<!--    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+<!--    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
+
+<!--    ga('create', _gaId, _gaDomain);-->
+<!--    ga('send', 'pageview');-->
+<!--</script>-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NXT8RBYT0R"></script>
 <script>
-    // dynamic User by Hux
-    var _gaId = '{{ site.ga_track_id }}';
-    var _gaDomain = '{{ site.ga_domain }}';
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    // Originial
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
+    gtag('config', 'G-NXT8RBYT0R');
 </script>
+
+
 {% endif %}
 
 
@@ -208,7 +220,7 @@
     // dynamic User by Hux
     var _baId = '{{ site.ba_track_id }}';
 
-    // Originial
+    // 百度统计内嵌代码：此代码同时适用于PC端、移动端的页面，以异步加载形式进行加载，数据更准确、加载速度更快。请将此代码复制并粘贴到您要跟踪的每个网页中：https://tongji.baidu.com/sc-web/10000062693/home/site/getjs?siteId=13911260
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
